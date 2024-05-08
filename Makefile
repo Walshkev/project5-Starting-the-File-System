@@ -1,7 +1,7 @@
 testfs: testfs.o libvvsfs.a 
 	gcc $^ -o $@
 
-testfs.o: testfs.c image.h block.h 
+testfs.o: testfs.c image.h block.h ctest.h 
 	gcc -Wall -Wextra -DCTEST_ENABLE -c $<
 
 image.o :image.c
@@ -13,7 +13,8 @@ block.o: block.c
 libvvsfs.a : image.o block.o 
 	ar rcs $@ $^
 
-
+ctest.o: ctest.c 
+	gcc -Wall -Wextra -c $<
 
 .PHONY: clean pristine
 
