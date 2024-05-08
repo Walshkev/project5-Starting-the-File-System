@@ -1,4 +1,3 @@
 *.o
-ctest.c
-ctest.h
+
 file_name.txt
