@@ -10,7 +10,7 @@ image.o :image.c
 block.o: block.c
 	gcc -Wall -Wextra -c $<
 
-libvvsfs.a : image.o block.o 
+libvvsfs.a : image.o block.o ctest.o 
 	ar rcs $@ $^
 
 ctest.o: ctest.c 
